@@ -13,7 +13,7 @@
   },
   {
     "path": "ContentPack.cs",
-    "sha256": "4754954aec617e834c98a1682e7efc50a792f56f82e556bf79ecb718a9393e44"
+    "sha256": "030cf7b6260551c171e691d5324a14f41950449a78881b6ee0665c6cf8a81f90"
   },
   {
     "path": "CreatorChecks.cs",
@@ -25,7 +25,11 @@
   },
   {
     "path": "Editor.cs",
-    "sha256": "75df3c59e23ba69f42ea78c4cb46dc7d6a3b9e8915bfcd996dcc3f1267ccab5c"
+    "sha256": "8a5242ed2792e201508993fe483dca47223ca9be98a68efd7d38c8f8b567348f"
+  },
+  {
+    "path": "GameTargetConverter.cs",
+    "sha256": "6c7622c474cc39b4cde2dd170c21ed6fa88faa037713e35df6d0dfbcc3977cf9"
   },
   {
     "path": "LICENSE",
@@ -41,7 +45,7 @@
   },
   {
     "path": "README.md",
-    "sha256": "69a0c92c880cb5ea0a784373483464e4b29d83c8469df623dd5dc61059f714d4"
+    "sha256": "60328adf241f568f3e00c05a2236ff314de0f95b831dd49fafcd4f1502ccec63"
   },
   {
     "path": "ScenePreview.cs",
@@ -49,7 +53,7 @@
   },
   {
     "path": "SelfTest.cs",
-    "sha256": "e48853a1615e84c4564ef9cf29f332010a197973e9b21bc1cacfb951bb941e2c"
+    "sha256": "ca6fa3b8881ac1e5cfee7edca3e8dcc9a9c200a7403bc03754acbf58217d07e9"
   },
   {
     "path": "SpriteStudio.cs",

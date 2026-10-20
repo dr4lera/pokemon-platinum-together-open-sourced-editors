@@ -11,7 +11,8 @@ public sealed class ContentPack
     public string Name {get;set;}="My Inverna expansion";
     public string Version {get;set;}="1.0.0";
     public string Author {get;set;}="Local creator";
-    public string Target {get;set;}="platinum-together-0.1.5";
+    public static readonly string[] Targets=["platinum-together-0.1.5","platinum-together-0.1.6","platinum-together-0.1.7"];
+    public string Target {get;set;}="platinum-together-0.1.7";
     public List<Map> Maps {get;set;}=[];
     public static readonly JsonSerializerOptions Json=new(){WriteIndented=true,PropertyNamingPolicy=JsonNamingPolicy.CamelCase};
     public ContentPack Clone()=>JsonSerializer.Deserialize<ContentPack>(JsonSerializer.Serialize(this,Json),Json)!;
@@ -34,7 +35,7 @@ public sealed class ContentPack
         Check(System.Text.RegularExpressions.Regex.IsMatch(Id??"","^[a-z0-9][a-z0-9-]{0,47}$"),"Pack ID must use lowercase letters, numbers and hyphens (1–48 characters).");
         Check(!string.IsNullOrWhiteSpace(Name)&&Name.Length<=100,"Pack name must have 1–100 characters.");
         Check(System.Text.RegularExpressions.Regex.IsMatch(Version??"",@"^\d{1,4}\.\d{1,4}\.\d{1,4}$"),"Version must look like 1.0.0.");
-        Check(Target is "platinum-together-0.1.5" or "platinum-together-0.1.6","Unrecognized game target.");
+        Check(Targets.Contains(Target),"Unrecognized game target.");
         Check(Maps!=null&&Maps.Count is >0 and <=64,"A pack needs 1–64 maps.");
         if(Maps==null)return errors;
         var ids=new HashSet<string>();

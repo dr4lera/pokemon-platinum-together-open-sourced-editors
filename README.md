@@ -6,16 +6,16 @@ the native game. Game/ROM assets and the official creator source are not bundled
 
 ## Download
 
-**[Download the standalone Windows editors — dev9 preview](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-editors/releases/download/v0.1.0-dev.9/PokemonPlatinumTogetherOpenSourced-Editors-Windows-x64-dev9.zip)**
+**[Download the standalone Windows editors â€” dev11 preview](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-editors/releases/download/v0.1.0-dev.11/PokemonPlatinumTogetherOpenSourced-Editors-Windows-x64-dev11.zip)**
 
 Extract the complete ZIP and open `MapStudio/InvernaMapStudio.exe`. Keep the folder
 together; its .NET runtime is included. For sprite authoring, use the sprite tools
 or start the executable with `--sprites`. The ZIP includes the map, sprite and
 verification guides in `docs/`.
 
-[Release notes and SHA-256 checksum](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-editors/releases/tag/v0.1.0-dev.9).
+[Release notes and SHA-256 checksum](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-editors/releases/tag/v0.1.0-dev.11).
 [All five projects and downloads](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher#downloads).
-The public dev9 build is the **Latest release** and remains a **development preview**.
+The public dev11 build is the **Latest release** and remains a **development preview**.
 Native map/story/sprite installation remains unfinished. The [full Windows bundle](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher#downloads)
 also includes these editors.
 
@@ -66,3 +66,12 @@ not slow the animation or queue a burst of old poses. Starting a pose restarts i
 timeline, and selecting a different frame stops playback. Tests cover frame
 boundaries, callback frequencies of 30/60/120/144 Hz and skipped presentation frames.
 This concerns editor previews; native game simulation timing is separate.
+
+
+## Game target selection
+
+New map projects target 0.1.7. Use **Pack details → Target** to select 0.1.5,
+0.1.6 or 0.1.7; target metadata survives project and pack roundtrips. Older
+projects retain their target. This is authoring compatibility only: the retail
+0.1.7 player disables Studio/import entrypoints, and native installation remains
+unfinished. No game executable or imported artwork is redistributed.

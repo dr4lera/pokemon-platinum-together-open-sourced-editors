@@ -15,11 +15,13 @@ internal static class SelfTest
             bad=p.Clone();bad.Maps[0].Objects.Add(new(){Id="spawn-block",Kind="building",X=15,Y=21,SizeX=3,SizeY=3});Assert(bad.Validate().Any(e=>e.Contains("spawn is inside")),"Solid footprint at spawn accepted.");
             bad=p.Clone();bad.Maps[0].Objects.Add(new(){Id="exit",Kind="warp",X=2,Y=2,Destination=bad.Maps[0].Id,DestinationX=20,DestinationY=8});Assert(bad.Validate().Any(e=>e.Contains("warp destination is inside")),"Warp into building accepted.");
             bad=p.Clone();bad.Maps[0].Objects[0].SizeX=33;Assert(bad.Validate().Count>0,"Oversized object accepted.");
-            bad=p.Clone();bad.Target="platinum-together-0.1.6";bad.RequireValid();
+            Assert(p.Target=="platinum-together-0.1.7","New project targets an old game version.");
+            foreach(var target in ContentPack.Targets){var versioned=p.Clone();versioned.Target=target;versioned.RequireValid();var versionPath=Path.Combine(dir,target+".ptpack");versioned.Export(versionPath);Assert(ContentPack.Import(versionPath).Target==target,"Target changed during export/import.");}
+            bad=p.Clone();bad.Target="platinum-together-unknown";Assert(bad.Validate().Count>0,"Unknown authoring target accepted.");
             using(var zip=ZipFile.Open(path,ZipArchiveMode.Update)){zip.GetEntry("project.json")!.Delete();using var w=new StreamWriter(zip.CreateEntry("project.json").Open());w.Write("{}");}
             bool rejected=false;try{ContentPack.Import(path);}catch(InvalidDataException){rejected=true;}Assert(rejected,"Tampered pack accepted.");
             p.Export(path);using(var zip=ZipFile.Open(path,ZipArchiveMode.Update)){zip.CreateEntry("../escape.txt");}rejected=false;try{ContentPack.Import(path);}catch(InvalidDataException){rejected=true;}Assert(rejected,"Traversal entry accepted.");
-            File.WriteAllText(Path.Combine(AppContext.BaseDirectory,"selftest.json"),JsonSerializer.Serialize(new{passed=true,checks=new[]{"project roundtrip","pack roundtrip","collision persistence","spawn bounds","blocked spawn","warp links","solid spawn footprint","solid warp destination","object size limits","0.1.6 authoring target","tamper rejection","path traversal rejection"}},ContentPack.Json));
+            File.WriteAllText(Path.Combine(AppContext.BaseDirectory,"selftest.json"),JsonSerializer.Serialize(new{passed=true,checks=new[]{"project roundtrip","pack roundtrip","collision persistence","spawn bounds","blocked spawn","warp links","solid spawn footprint","solid warp destination","object size limits","0.1.5/0.1.6/0.1.7 target roundtrips","unknown target rejection","tamper rejection","path traversal rejection"}},ContentPack.Json));
         }finally{Directory.Delete(dir,true);}
     }
 }
