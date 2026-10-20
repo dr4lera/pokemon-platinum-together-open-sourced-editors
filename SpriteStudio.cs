@@ -5,7 +5,7 @@ public sealed class SpriteStudio:Form
 {
     CreatorProject? project;readonly ListBox frames=new(){Dock=DockStyle.Fill};readonly SpriteCanvas canvas=new(){Dock=DockStyle.Fill};
     readonly Label status=new(){Dock=DockStyle.Bottom,Height=64,Padding=new(12),Text="Import your .ptdraft.json from the official creator. Your original project is preserved."};
-    readonly System.Windows.Forms.Timer timer=new(){Interval=140};CreatorFrame[] animation=[];int animationIndex;
+    readonly System.Windows.Forms.Timer timer=new(){Interval=140};readonly Stopwatch animationTime=new();CreatorFrame[] animation=[];
     public SpriteStudio()
     {
         AutoScaleMode=AutoScaleMode.None;Text="Plat Together · Trainer Sprite Studio";ClientSize=new(1020,720);MinimumSize=new(800,580);Font=new("Segoe UI",10);
@@ -17,9 +17,9 @@ public sealed class SpriteStudio:Form
         Button("Export frame PNG",()=>{if(frames.SelectedItem is not CreatorFrame f)throw new IOException("Select a frame first.");using var d=new SaveFileDialog{Filter="PNG|*.png",FileName=f.Family+"-"+(f.Index+1)+".png"};if(d.ShowDialog(this)==DialogResult.OK){using var image=f.Bitmap();image.Save(d.FileName,System.Drawing.Imaging.ImageFormat.Png);}});
         Button("Export pose sheet",()=>{if(frames.SelectedItem is not CreatorFrame f)throw new IOException("Select a frame first.");using var d=new SaveFileDialog{Filter="PNG|*.png",FileName=f.Family+".png"};if(d.ShowDialog(this)==DialogResult.OK){using var sheet=Require().Sheet(f.Family);sheet.Save(d.FileName,System.Drawing.Imaging.ImageFormat.Png);}});
         Button("Export art pack",()=>{var p=Require();using var d=new SaveFileDialog{Filter="Trainer art pack|*.pttrainer",FileName="my-trainer.pttrainer"};if(d.ShowDialog(this)==DialogResult.OK)p.ExportPack(d.FileName);});
-        Button("Play / stop pose",()=>{if(timer.Enabled){timer.Stop();return;}if(frames.SelectedItem is not CreatorFrame f)throw new IOException("Select a frame first.");var group=Require().Frames.Where(x=>x.Family==f.Family).ToArray();animation=new CreatorFrame[CreatorProject.FrameCount(f.Family,group.Max(x=>x.Index)+1)];foreach(var x in group)animation[x.Index]=x;animationIndex=0;timer.Start();});
+        Button("Play / stop pose",()=>{if(timer.Enabled){timer.Stop();animationTime.Stop();return;}if(frames.SelectedItem is not CreatorFrame f)throw new IOException("Select a frame first.");var group=Require().Frames.Where(x=>x.Family==f.Family).ToArray();animation=new CreatorFrame[CreatorProject.FrameCount(f.Family,group.Max(x=>x.Index)+1)];foreach(var x in group)animation[x.Index]=x;animationTime.Restart();canvas.Frame=animation[0];canvas.Invalidate();timer.Start();});
         var split=new SplitContainer{Size=new(1020,566),Dock=DockStyle.Fill,SplitterDistance=310};split.Panel1.Controls.Add(frames);split.Panel2.Controls.Add(canvas);Controls.Add(split);Controls.Add(status);Controls.Add(bar);split.BringToFront();
-        frames.SelectedIndexChanged+=(_,_)=>{timer.Stop();canvas.Frame=frames.SelectedItem as CreatorFrame;canvas.Invalidate();};timer.Tick+=(_,_)=>{if(animation.Length==0)return;canvas.Frame=animation[animationIndex++%animation.Length];canvas.Invalidate();};
+        frames.SelectedIndexChanged+=(_,_)=>{timer.Stop();animationTime.Stop();canvas.Frame=frames.SelectedItem as CreatorFrame;canvas.Invalidate();};timer.Tick+=(_,_)=>{if(animation.Length==0)return;canvas.Frame=animation[AnimationTime.FrameIndex(animationTime.Elapsed,TimeSpan.FromMilliseconds(140),animation.Length)];canvas.Invalidate();};
         AutoScaleMode=AutoScaleMode.Dpi;AutoScaleDimensions=new SizeF(96,96);PerformAutoScale();Shown+=(_,_)=>split.SplitterDistance=Math.Min((int)Math.Round(310*DeviceDpi/96d),split.Width/3);
     }
     CreatorProject Require()=>project??throw new IOException("Import a creator project first.");

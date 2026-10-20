@@ -41,3 +41,13 @@ protocol services. These repositories are development source previews. Both depe
 [shared backend](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-server).
 See the [configuration reference](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher/blob/main/PrivateServer/docs/server-config.md)
 for roles, independent data folders and current native/federation limitations.
+
+
+## Preview timing
+
+Scene particles, floating objects and sprite poses derive their animation from
+monotonic elapsed time. UI timer callbacks request redraws; missed callbacks do
+not slow the animation or queue a burst of old poses. Starting a pose restarts its
+timeline, and selecting a different frame stops playback. Tests cover frame
+boundaries, callback frequencies of30/60/120/144Hz and skipped presentation frames.
+This concerns editor previews; native game simulation timing is separate.

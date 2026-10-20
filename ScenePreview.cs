@@ -12,8 +12,8 @@ public sealed partial class Editor
     void RefreshScene(){var selection=canvas.Selected;scene.Items.Clear();scene.Items.AddRange(current.Objects.Cast<object>().ToArray());scene.SelectedItem=selection;}
     sealed partial class MapCanvas
     {
-        readonly System.Windows.Forms.Timer animation=new(){Interval=50};double seconds;
-        void StartAnimation(){animation.Tick+=(_,_)=>{seconds+=.05;Invalidate();};animation.Start();}
+        readonly System.Windows.Forms.Timer animation=new(){Interval=50};readonly System.Diagnostics.Stopwatch animationTime=System.Diagnostics.Stopwatch.StartNew();double seconds;
+        void StartAnimation(){animation.Tick+=(_,_)=>{seconds=animationTime.Elapsed.TotalSeconds;Invalidate();};animation.Start();}
         protected override void Dispose(bool disposing){if(disposing)animation.Dispose();base.Dispose(disposing);}
         static Color Parse(string s)=>MapObject.ValidColor(s)?ColorTranslator.FromHtml(s):Color.SlateGray;
         void DrawObjects(Graphics g)
