@@ -4,6 +4,11 @@ Windows authoring tools for map projects, validated `.ptpack` exports and custom
 trainer sprite projects. This preview does not yet install maps or trainers in
 the native game. Game/ROM assets and the official creator source are not bundled.
 
+Multiplayer support targets matching project-prepared clients. Joining a project
+host from a stock official client is unsupported in this preview; a user reported
+**World not found**. The editors do not change network compatibility. See
+[connection compatibility](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher/blob/main/PrivateServer/docs/players.md#connection-compatibility).
+
 ## Download
 
 **[Download the standalone Windows editors â€” dev11 preview](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-editors/releases/download/v0.1.0-dev.11/PokemonPlatinumTogetherOpenSourced-Editors-Windows-x64-dev11.zip)**
