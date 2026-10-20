@@ -5,7 +5,7 @@
   },
   {
     "path": ".gitignore",
-    "sha256": "e79d21316d6b29114eb7c56823aba7255cb6749a5530e81046b64f8d1ea48415"
+    "sha256": "eb1089667267cbca0d51e4edb8e3096f11ca80b691e89eb16f5b88ff6cc1e664"
   },
   {
     "path": "AnimationTime.cs",
@@ -25,7 +25,7 @@
   },
   {
     "path": "Editor.cs",
-    "sha256": "8a5242ed2792e201508993fe483dca47223ca9be98a68efd7d38c8f8b567348f"
+    "sha256": "b01a4496b16c56d7bfe662c0b3b9e99c512634780d756a89ccb0517cc6ec15a1"
   },
   {
     "path": "GameTargetConverter.cs",
@@ -45,7 +45,7 @@
   },
   {
     "path": "README.md",
-    "sha256": "5fd1ef2351b131c14c0aeb6b866c242e51b85f3714fef00a83ab512d702b4ec0"
+    "sha256": "fc612e4059ff1a8ca89f681849d2327b8189a431e11759348c50a65a3789fa3b"
   },
   {
     "path": "ScenePreview.cs",
@@ -61,6 +61,6 @@
   },
   {
     "path": "THIRD_PARTY_NOTICES.md",
-    "sha256": "5fc9ce3a8ed50f08f0bcffe98008d84e317003445473061c3ad921a972fbef5a"
+    "sha256": "583a13c82c4aa6fa76278b4ca184360e6b75d503462767082de26a808164d537"
   }
 ]

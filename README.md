@@ -11,7 +11,7 @@ host from a stock official client is unsupported in this preview; a user reporte
 
 ## Download
 
-**[Download the standalone Windows editors â€” dev11 preview](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-editors/releases/download/v0.1.0-dev.11/PokemonPlatinumTogetherOpenSourced-Editors-Windows-x64-dev11.zip)**
+**[Download the standalone Windows editors — dev11 preview](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-editors/releases/download/v0.1.0-dev.11/PokemonPlatinumTogetherOpenSourced-Editors-Windows-x64-dev11.zip)**
 
 Extract the complete ZIP and open `MapStudio/InvernaMapStudio.exe`. Keep the folder
 together; its .NET runtime is included. For sprite authoring, use the sprite tools
@@ -21,7 +21,7 @@ verification guides in `docs/`.
 [Release notes and SHA-256 checksum](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-editors/releases/tag/v0.1.0-dev.11).
 [All five projects and downloads](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher#downloads).
 The public dev11 build is the **Latest release** and remains a **development preview**.
-Native map/story/sprite installation remains unfinished. The [full Windows bundle](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher#downloads)
+Native map/story installation and the authoring-ZIP-to-PTTR compiler remain unfinished. The [full Windows bundle](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher#downloads)
 also includes these editors.
 
 ## Related projects
@@ -80,3 +80,22 @@ New map projects target 0.1.7. Use **Pack details → Target** to select 0.1.5,
 projects retain their target. This is authoring compatibility only: the retail
 0.1.7 player disables Studio/import entrypoints, and native installation remains
 unfinished. No game executable or imported artwork is redistributed.
+
+
+## Dev12 integration status
+
+Native gameplay, friend battles and trading are user-confirmed on matching
+prepared 0.1.7 clients with the combined private backend. This editor update
+refreshes the shared guides; it does not change the editor executable's features.
+The backend now delivers owned native PTTR trainer packs through the native
+gallery protocol. Editor exports remain authoring ZIPs, not native PTTR binaries;
+the converter and real custom-art rendering verification remain unfinished.
+See the [trainer guide](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher/blob/main/PrivateServer/docs/trainer-sprites.md).
+
+
+## Independent-client migration
+
+Dev12 source updates are staged; the download above remains the published dev11
+preview. New releases are paused while the [source gameplay client](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-client)
+is developed. Confirmed reference-client gameplay does not establish 1:1 parity
+or private-server integration in that new client.
