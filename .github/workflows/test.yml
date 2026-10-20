@@ -1,0 +1,19 @@
+name: Map and creator checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet build MapStudio.csproj -c Release
+      - shell: pwsh
+        run: |
+          $p=Start-Process -FilePath ./bin/Release/net10.0-windows/InvernaMapStudio.exe -ArgumentList '--selftest' -PassThru -Wait -WindowStyle Hidden
+          if($p.ExitCode -ne 0){throw 'Map/creator self-tests failed'}
+          Get-Content ./bin/Release/net10.0-windows/selftest.json
+          Get-Content ./bin/Release/net10.0-windows/creator-selftest.json

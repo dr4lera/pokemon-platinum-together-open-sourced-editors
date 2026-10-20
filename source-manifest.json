@@ -1,0 +1,58 @@
+[
+  {
+    "path": ".github/workflows/test.yml",
+    "sha256": "a0c48e5089c5cd69e8bbed0db7f8fa0d11a3130ffe56a89db351a3a44380d9d1"
+  },
+  {
+    "path": ".gitignore",
+    "sha256": "e79d21316d6b29114eb7c56823aba7255cb6749a5530e81046b64f8d1ea48415"
+  },
+  {
+    "path": "ContentPack.cs",
+    "sha256": "4754954aec617e834c98a1682e7efc50a792f56f82e556bf79ecb718a9393e44"
+  },
+  {
+    "path": "CreatorChecks.cs",
+    "sha256": "d20ee1cf5963c95eee2e2f1c711955a68ed16ead5e307c0014b5670d773209e4"
+  },
+  {
+    "path": "CreatorProject.cs",
+    "sha256": "f31cbb37e35a7d10bab84bb7f42d10a9195311206a3394f2d2ec366a5519e152"
+  },
+  {
+    "path": "Editor.cs",
+    "sha256": "75df3c59e23ba69f42ea78c4cb46dc7d6a3b9e8915bfcd996dcc3f1267ccab5c"
+  },
+  {
+    "path": "LICENSE",
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+  },
+  {
+    "path": "MapStudio.csproj",
+    "sha256": "93861dca764d3a272ec9422b48541fc5dc4bf1df01f21af1355da80a27c89c43"
+  },
+  {
+    "path": "Program.cs",
+    "sha256": "4bd5e560b13c935b8d50f4f4692026b2be6ae444d0ac9126e5be157d7d3ffce4"
+  },
+  {
+    "path": "README.md",
+    "sha256": "6251b7fec098bee8a3a1fd9fcd517d9c2da7a7b46123e737a40655111711bf64"
+  },
+  {
+    "path": "ScenePreview.cs",
+    "sha256": "76583bc573f9bc61705eb4163a8e5b6eaa0b6a8a2c0bd492a6512aec7e285442"
+  },
+  {
+    "path": "SelfTest.cs",
+    "sha256": "e48853a1615e84c4564ef9cf29f332010a197973e9b21bc1cacfb951bb941e2c"
+  },
+  {
+    "path": "SpriteStudio.cs",
+    "sha256": "c55478edc4886c27bb2d95300abdb14dc4af80c99620d5a30eaba8d988a3d574"
+  },
+  {
+    "path": "THIRD_PARTY_NOTICES.md",
+    "sha256": "5fc9ce3a8ed50f08f0bcffe98008d84e317003445473061c3ad921a972fbef5a"
+  }
+]
