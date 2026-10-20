@@ -35,10 +35,9 @@ Developed with OpenAI Codex assistance. GPL-3.0-or-later; see [LICENSE](LICENSE)
 ## Separate hosting projects
 
 Server settings live in server config files and host administration tools. The
-`pokemon-platinum-together-open-sourced-inverna-server` and `pokemon-platinum-together-open-sourced-world-server` sibling projects
+[Inverna server](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-inverna-server) and [world server](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-world-server) projects
 contain distinct hosting guides and deployment configs for shared-city and co-op
-protocol services. These new repositories are still local development work;
-public links will be added when published. Both depend on the
+protocol services. These repositories are development source previews. Both depend on the
 [shared backend](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-server).
 See the [configuration reference](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher/blob/main/PrivateServer/docs/server-config.md)
 for roles, independent data folders and current native/federation limitations.
