@@ -8,6 +8,10 @@
     "sha256": "e79d21316d6b29114eb7c56823aba7255cb6749a5530e81046b64f8d1ea48415"
   },
   {
+    "path": "AnimationTime.cs",
+    "sha256": "8230617ab23c5b5a2fadefb01387528fe18310f93bb8bc4d54ef52194133ab64"
+  },
+  {
     "path": "ContentPack.cs",
     "sha256": "4754954aec617e834c98a1682e7efc50a792f56f82e556bf79ecb718a9393e44"
   },
@@ -33,15 +37,15 @@
   },
   {
     "path": "Program.cs",
-    "sha256": "4bd5e560b13c935b8d50f4f4692026b2be6ae444d0ac9126e5be157d7d3ffce4"
+    "sha256": "db201db7feb56935356ab2ac91d72d81503a5dc838819bbf2c6cea1e2b38b949"
   },
   {
     "path": "README.md",
-    "sha256": "6251b7fec098bee8a3a1fd9fcd517d9c2da7a7b46123e737a40655111711bf64"
+    "sha256": "69a0c92c880cb5ea0a784373483464e4b29d83c8469df623dd5dc61059f714d4"
   },
   {
     "path": "ScenePreview.cs",
-    "sha256": "76583bc573f9bc61705eb4163a8e5b6eaa0b6a8a2c0bd492a6512aec7e285442"
+    "sha256": "42533aca907c7ab541218657b81eb5e25ed3b38b7186c3ad4ef74af34c153b79"
   },
   {
     "path": "SelfTest.cs",
@@ -49,7 +53,7 @@
   },
   {
     "path": "SpriteStudio.cs",
-    "sha256": "c55478edc4886c27bb2d95300abdb14dc4af80c99620d5a30eaba8d988a3d574"
+    "sha256": "5803c1531b2cf108fdd86248cf5767f6a32b4f5c0242edeb51a9593a642624ef"
   },
   {
     "path": "THIRD_PARTY_NOTICES.md",
